@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rl-mac-mkg"
+version = "0.1.0"
+description = "Budget-constrained PPO coordination for multimodal knowledge graph construction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "RL-MAC-MKG contributors"}]
+dependencies = ["numpy>=1.26,<3", "Pillow>=10.4", "PyYAML>=6.0", "requests>=2.32"]
+
+[project.optional-dependencies]
+train = ["torch>=2.7,<3", "transformers>=4.57,<5", "peft>=0.17,<1", "accelerate>=1.0,<2", "safetensors>=0.6"]
+retrieval = ["sentence-transformers>=5,<6", "scikit-learn>=1.6,<2"]
+dev = ["pytest>=8,<10", "ruff>=0.12", "build>=1.2"]
+
+[project.scripts]
+rl-mac-mkg = "rl_mac_mkg.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rl_mac_mkg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

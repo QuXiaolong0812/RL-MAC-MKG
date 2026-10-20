@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying RL-MAC-MKG manuscript."
+title: "RL-MAC-MKG"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Qu
+    given-names: Xiaolong
+  - family-names: Cui
+    given-names: Jinman
+  - family-names: Li
+    given-names: Yakun
+  - family-names: An
+    given-names: Ping
+  - family-names: Li
+    given-names: Dongmei
+  - family-names: Cui
+    given-names: Xiaohui
+preferred-citation:
+  type: unpublished
+  title: "A Reinforcement-Driven Multi-Agent Coordination Framework for Automatic Multi-modal Knowledge Graph Construction"
+  year: 2026
+  authors:
+    - family-names: Qu
+      given-names: Xiaolong
+    - family-names: Cui
+      given-names: Jinman
+    - family-names: Li
+      given-names: Yakun
+    - family-names: An
+      given-names: Ping
+    - family-names: Li
+      given-names: Dongmei
+    - family-names: Cui
+      given-names: Xiaohui

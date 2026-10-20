@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "loading_policy": "local_files_only",
+  "roles": {
+    "controller_backbone": {"path": "backbones/Qwen3-8B", "architecture": "Qwen3Model", "files": ["config.json", "tokenizer.json", "tokenizer_config.json", "model.safetensors or model.safetensors.index.json and shards"]},
+    "textual_backbone": {"path": "backbones/Qwen3-8B", "architecture": "Qwen3ForCausalLM"},
+    "visual_backbone": {"path": "backbones/Qwen3-VL-8B-Instruct", "architecture": "Qwen3VLForConditionalGeneration", "files": ["config.json", "preprocessor_config.json", "tokenizer.json", "tokenizer_config.json", "model weights"]},
+    "verifier_backbone": {"path": "backbones/Qwen3-VL-8B-Instruct", "architecture": "Qwen3VLForConditionalGeneration"},
+    "clip": {"path": "backbones/clip-vit-base-patch32", "architecture": "CLIPModel", "files": ["config.json", "preprocessor_config.json", "tokenizer files", "model weights"]},
+    "canonicalizer": {"path": "backbones/all-MiniLM-L6-v2", "architecture": "SentenceTransformer", "files": ["modules.json", "config.json", "tokenizer files", "pooling configuration", "model weights"]},
+    "textual_adapter": {"path": "adapters/textual", "files": ["adapter_config.json", "adapter_model.safetensors"]},
+    "visual_adapter": {"path": "adapters/visual", "files": ["adapter_config.json", "adapter_model.safetensors"]},
+    "verifier_adapter": {"path": "adapters/verifier", "files": ["adapter_config.json", "adapter_model.safetensors"]},
+    "controller_checkpoint": {"path": "controller/ppo", "files": ["controller.json", "heads.safetensors", "adapter/", "tokenizer/", "integrity.json", "training.pt for resume"]},
+    "verifier_calibration": {"path": "calibration/verifier.json", "created_by": "rl-mac-mkg calibrate"},
+    "action_costs": {"path": "calibration/action_costs.json", "created_by": "rl-mac-mkg fit-costs"}
+  }
+}
